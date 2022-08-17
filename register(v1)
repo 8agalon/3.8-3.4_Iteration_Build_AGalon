@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		
+		<meta charset = "utf-8" />
+		<title>Register</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+	</head>
+	
+	<body>
+		
+		<div class="grid-container">
+			
+			<div class="nav">
+				<p>Navigation</p>
+			</div>
+			<div class="box4">
+				<p>box4</p>
+			</div>
+			<div class="footer"><!-- Holds the foot notes -->
+				<p class = "grey">&copy Copyright Allen Galon 2022</p>
+			</div>
+			
+		</div>
+			
+	</body>
+	
+</html>
