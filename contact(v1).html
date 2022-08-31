@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		
+		<meta charset = "utf-8" />
+		<title>Contact</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+	</head>
+	
+	<body>
+		
+		<div class="grid-container">
+			
+			<div class="nav">
+  				<a href="index.php">Home</a>
+  				<a href="Genre_Artist_Ascending.php">Genre_Artist_Ascending</a>
+  				<a href="Song_Details_Artist_Descending.php">Song_Details_Artist_Descending</a>
+  				<a class="active" href="contact.php">Contact</a>
+				<a href="admin.php">Admin</a>
+				<a href="login.php">Login</a>
+				<img class="img1" src="images/placeholder_image.png" alt="Moosic_Logo"/>
+			</div>
+			<div class="box7">
+				<p>Heading - Contact</p>
+			</div>
+			<div class="box8">
+				<form action="connect.php" method="post">
+					<!-- Name Field -->
+					<div class="row1">
+					   <div class="column1">
+						  <label for="name">Full Name</label>
+					   </div>
+					   <div class="column2">
+						  <input type="text" id="name" name="name" placeholder="Your Full Name">	
+					   </div>
+					</div>
+
+					<!-- Email Field -->
+					<div class="row1">
+					   <div class="column1">
+						  <label for="email">Email Address</label>
+					   </div>
+					   <div class="column2">
+						  <input type="text" id="email" name="email" placeholder="Your Email Address">	
+					   </div>
+					</div>
+
+					<!-- Contact Field -->
+					<div class="row1">
+					   <div class="column1">
+						  <label for="phone">Contact Number</label>
+					   </div>
+					   <div class="column2">
+						  <input type="text" id="phone" name="phone" placeholder="Your Contact Number">	
+					   </div>
+					</div>
+
+					<!-- Submit Field -->
+					<div class="row1">
+					   <div class="column1">
+						  <label for="message">Submit</label>
+					   </div>
+					   <div class="column2">
+						  <input type="text" id="message" name="message" placeholder="Your message">
+						  <input type="submit" value="Submit">
+					   </div>
+					</div>
+			 	</form>
+			</div>
+			<div class="footer"><!-- Holds the foot notes -->
+				<p class = "grey">&copy Copyright Allen Galon 2022</p>
+			</div>
+			
+		</div>
+			
+	</body>
+	
+</html>
