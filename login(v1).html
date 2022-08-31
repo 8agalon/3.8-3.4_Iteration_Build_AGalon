@@ -1,0 +1,99 @@
+<?php
+	ob_start();
+	session_start();
+		$error = NULL;
+		if($_SERVER["REQUEST_METHOD"] == "POST")	{
+			//connect.php(tells where to connect servername, dbaseName, username, password)
+			require "13CSI_Assessment_Database_mysqli.php";
+			//username and password sent from form
+			$myusername = mysqli_real_escape_string($conn,$_POST['username']);
+			$mypassword = mysqli_real_escape_string($conn,$_POST['password']);
+			
+			$query = "SELECT User_ID FROM User WHERE User_ID = '$myusername' and Password = '$mypassword'";
+			
+			$result = mysqli_query($conn, $query);
+			$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+			
+			$count = mysqli_num_rows($result);
+			
+			// If result matched $myusername and $mypassword, table row must be 1 row
+			if($count == 1) {
+				$_SESSION['login_user'] = $myusername;
+				header("location: admin.php");
+					
+			} 
+			
+			elseif($row["User_ID"] == "admin")
+			{
+				header("Location:admin.php");
+			}
+			
+			else {
+				$error = "ERROR! Your Login Name or Password is invalid";
+				}
+		}
+
+	ob_end_flush();
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		
+		<meta charset = "utf-8" />
+		<title>Login</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+	</head>
+	
+	<body>
+		
+		<div class="grid-container">
+			
+			<div class="nav">
+  				<a href="index.php">Home</a>
+  				<a href="Genre_Artist_Ascending.php">Genre_Artist_Ascending</a>
+  				<a href="Song_Details_Artist_Descending.php">Song_Details_Artist_Descending</a>
+  				<a href="contact.php">Contact</a>
+				<a href="admin.php">Admin</a>
+				<a class="active" href="login.php">Login</a>
+				<img class="img1" src="images/placeholder_image.png" alt="Moosic_Logo"/>
+			</div>
+			<div class="box6">
+				<form action="login.php" method="post">
+				  <div class="container">
+					<h1>Login</h1>
+					<p>Please fill in this form to log in.</p>
+					<hr>
+					<label for="uname"><b>Username</b></label>
+					<input type="text" placeholder="Enter Username" name="username" required>
+
+					<label for="psw"><b>Password</b></label>
+					<input type="password" placeholder="Enter Password" name="password" required>
+					  
+					<label>
+					  <input type="checkbox" checked="checked" name="remember"> Remember me
+					</label>
+
+					<hr>
+					<button class="sub-button"type="submit">Login</button>
+					<p>Don't have and account? <a href="register.php">Register</a>.</p>
+					  
+					<h3 class = "grey"><?php echo $error; ?></h3>
+				  </div>
+				</form>
+				
+				
+				
+			</div>
+			<div class="footer"><!-- Holds the foot notes -->
+				<p class = "grey">&copy Copyright Allen Galon 2022</p>
+			</div>
+			
+		</div>
+			
+	</body>
+	
+</html>
