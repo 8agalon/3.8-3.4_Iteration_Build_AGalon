@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');								/* Poppins Regular 400 */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');						/* Poppins Bold 700 */
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');									/* Anton Regular 400 */
+
 /* Scroll-Bar */
 
 /* width */
@@ -33,11 +35,11 @@
 
 /* Navigation */
 .nav {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Anton', sans-serif;
 	height: 75px;
 	grid-column: 1 / 5;
 	grid-row: 1;
-	background-color: #3b3530;
+	background-color: #110227;
 }
 
 .nav a {
@@ -99,10 +101,10 @@
 }
 
 .box1{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Anton', sans-serif;
 	font-weight: bold;
 	font-size: 40px;
-	background-color: #FF6E33;
+	background-color: #9c5377;
 	grid-column: 1 / 5;
   	grid-row: 2;
 	width: 100%;
@@ -113,9 +115,9 @@
 }
 
 .box2{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Anton', sans-serif;
 	font-size: 30px;
-	background-color: #C25C33;
+	background-color: #722d4f;
 	grid-column: 1 / 5;
   	grid-row: 3;
 	width: 100%;
@@ -125,10 +127,10 @@
 }
 
 .box4{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Anton', sans-serif;
 	font-size: 30px;
 	font-weight: bold;
-	background-color: #F07544;
+	background-color: #9c5377;
 	grid-column: 1 / 5;
   	grid-row: 2;
 	height: 100px;
@@ -139,8 +141,8 @@
 }
 
 .box5{
-	font-family: 'Poppins', sans-serif;
-	background-color: #F07544;
+	font-family: 'Anton', sans-serif;
+	background-color: #9c5377;
 	grid-column: 1 / 5;
   	grid-row: 4;
 	height: 605px;
@@ -151,8 +153,8 @@
 }
 
 .box6{
-	font-family: 'Poppins', sans-serif;
-	background-color: #C25C33;
+	font-family: 'Anton', sans-serif;
+	background-color: #9c5377;
 	grid-column: 1 / 5;
   	grid-row: 2;
 	height: 785px;
@@ -161,10 +163,10 @@
 }
 
 .box7{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Anton', sans-serif;
 	font-size: 30px;
 	font-weight: bold;
-	background-color: #3b3530;
+	background-color: #722d4f;
 	grid-column: 1 / 5;
   	grid-row: 2;
 	height: 100px;
@@ -175,8 +177,8 @@
 }
 
 .box8{
-	font-family: 'Poppins', sans-serif;
-	background-color: #F07544;
+	font-family: 'Anton', sans-serif;
+	background-color: #9c5377;
 	grid-column: 1 / 5;
   	grid-row: 3;
 	height: 535px;
@@ -185,8 +187,8 @@
 }
 
 .box9{
-	font-family: 'Poppins', sans-serif;
-	background-color: #3b3530;
+	font-family: 'Anton', sans-serif;
+	background-color: #9c5377;
 	grid-column: 1 / 5;
   	grid-row: 2;
 	height: 150px;
@@ -195,8 +197,8 @@
 }
 
 .box10{
-	font-family: 'Poppins', sans-serif;
-	background-color: #F07544;
+	font-family: 'Anton', sans-serif;
+	background-color: #722d4f;
 	grid-column: 1 / 5;
   	grid-row: 3;
 	height: 600px;
@@ -205,7 +207,7 @@
 }
 
 /* Login and Register Form */
-body {font-family: 'Poppins', sans-serif;}
+body {font-family: 'Anton', sans-serif;}
 
 input[type=text], input[type=password] {
   width: 100%;
@@ -326,10 +328,10 @@ input[type=submit]:hover{
 }
 
 .footer{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Anton', sans-serif;
 	padding: 10px 0;
   	text-align: center;
-	background-color: #3b3530;
+	background-color: #110227;
 	grid-column: 1 / 5;
   	grid-row: 5;
 	width: 100%;
