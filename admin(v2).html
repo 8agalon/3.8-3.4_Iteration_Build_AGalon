@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		
+		<meta charset = "utf-8" />
+		<title>Admin</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+	</head>
+	
+	<body>
+		
+		<div class="grid-container">
+			
+			<div class="nav"><!-- Holds the page navigation -->
+				<?php
+					session_start();
+					//Pulls the links from the nav.php page and places them in the navigation div
+
+					if($_SESSION['login_user'] == "admin"){
+						require 'nav_admin.php';
+
+						}
+					elseif($_SESSION['login_user'] !== "admin"){
+						require 'nav_user.php';
+					}
+
+					else
+						header("Location: login.php")
+					
+				?>
+			</div>
+			
+			
+			
+			<div class="box9">
+				<p>Heading - Admin - Grame</p>
+			</div>
+			<div class="box10">
+				<p>Content</p>
+			</div>
+			<div class="footer"><!-- Holds the foot notes -->
+				<p class = "grey">&copy Copyright Allen Galon 2022, Tawa College, All Rights Reserved.♥</p>
+			</div>
+			
+		</div>
+			
+	</body>
+	
+</html>
