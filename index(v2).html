@@ -12,14 +12,29 @@
 	<body>
 		
 		<div class="grid-container">
-			<div class="nav">
-  				<a class="active" href="index.php">Home</a>
-  				<a href="Genre_Artist_Ascending.php">Genre_Artist_Ascending</a>
-  				<a href="Song_Details_Artist_Descending.php">Song_Details_Artist_Descending</a>
-  				<a href="contact.php">Contact</a>
-				<a href="admin.php">Admin</a>
-				<a href="login.php">Login</a>
-				<img class="img1" src="images/placeholder_image.png" alt="Moosic_Logo"/>
+			<div class="nav"><!-- Holds the page navigation -->
+				<?php
+					session_start();
+					//Pulls the links from the nav.php page and places them in the navigation div
+
+					if($_SESSION['login_user'] == "admin"){
+						require 'nav_admin.php';
+					}
+				
+					elseif($_SESSION['login_user'] !== "admin"){
+						require 'nav_user.php';
+					}
+
+					elseif($_SESSION['login_user'] == ""){
+						require 'nav_user.php';
+					}
+						
+					else{
+						die;
+						}
+				?>
+				
+				
 			</div>
 			<div class="box1">
 				<p>Moosic For You</p>
