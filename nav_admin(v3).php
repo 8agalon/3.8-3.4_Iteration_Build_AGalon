@@ -6,4 +6,5 @@
 	<a href="admin.php">Admin</a>
 	<a class="active" href="login.php">Login</a>
 	<img class="img1" src="images/placeholder_image.png" alt="Moosic_Logo"/>
+	<a href="logout.php">Log-Out</a>
 </div>
