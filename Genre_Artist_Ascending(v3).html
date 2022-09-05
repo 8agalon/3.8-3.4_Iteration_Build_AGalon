@@ -18,11 +18,11 @@
 					session_start();
 					//Pulls the links from the nav.php page and places them in the navigation div
 
-					if($_SESSION['login_user'] == "admin"){
+					if($_SESSION['login_user'] == "Graeme"){
 						require 'nav_admin.php';
 
 						}
-					elseif($_SESSION['login_user'] !== "admin"){
+					elseif($_SESSION['login_user'] !== "Graeme"){
 						require 'nav_user.php';
 					}
 
@@ -32,7 +32,7 @@
 				?>
 			</div>
 			<div class="box4">
-				<p>Header - Genre_Artist_Ascending</p>
+				<p>Genre_Artist_Ascending</p>
 			</div>
 			<div class="header">
 				<div class="column">
