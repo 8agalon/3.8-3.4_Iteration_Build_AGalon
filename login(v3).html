@@ -17,7 +17,7 @@
 			$count = mysqli_num_rows($result);
 			
 			// If result matched $myusername and $mypassword, table row must be 1 row
-			if($myusername == "admin"){
+			if($myusername == "Graeme"){
 				$_SESSION['login_user'] = $myusername;
 				header("location: admin.php");
 			}
