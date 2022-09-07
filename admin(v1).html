@@ -17,13 +17,17 @@
 				<?php
 					session_start();
 					//Pulls the links from the nav.php page and places them in the navigation div
-
-					if($_SESSION['login_user'] == "Graeme"){
-						require 'nav_admin.php';
-
-						}
+				
+					if($_SESSION['login_user'] == "user"){
+						require 'nav_user.php';
+					}
+				
 					elseif($_SESSION['login_user'] !== "Graeme"){
 						require 'nav_user.php';
+					}
+				
+					elseif($_SESSION['login_user'] == "Graeme"){
+						require 'nav_admin.php';
 					}
 
 					else
@@ -33,7 +37,7 @@
 			</div>
 					
 			<div class="box9">
-				<p>Admin - Grame Settings</p>
+				<img src="images/admin(v1).jpg" alt="admin" class="img_admin">
 			</div>
 				<div class="box10">
 						<h1>Current Users</h1>
@@ -177,7 +181,7 @@
 			</div>
 			
 			<div class="footer"><!-- Holds the foot notes -->
-				<p class = "grey">&copy Copyright Allen Galon 2022, Tawa College, All Rights Reserved.♥</p>
+				<p class = "grey">&copy Copyright Allen Galon 2022, Tawa College, All Rights Reserved.♥<a href="index.php"><img class="img2" src="images/moosic_mic.png" alt="Moosic_Logo"/></a></p>
 			</div>
 			
 		</div>
