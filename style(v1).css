@@ -38,7 +38,7 @@
 /* Navigation */
 .nav {
 	font-family: 'Barlow', sans-serif;
-	height: 70px;
+	height: 80px;
 	grid-column: 1 / 5;
 	grid-row: 1;
 	background-color: #703a00;
@@ -49,9 +49,9 @@
 	float: left;
 	color: #F6E8B1;
 	text-align: center;
-	padding: 25px 40px;
+	padding: 15px 40px;
 	text-decoration: none;
-	font-size: 17px;
+	font-size: 25px;
 }
 
 .nav a:hover {
@@ -64,7 +64,7 @@
 	color: #F6E8B1;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1150px) {
 	.nav {
 		display: flex;
 		flex-direction: column;
@@ -79,15 +79,39 @@
 
 /* Images */
 .img1{
+	height: 40px;
+	padding: 10px;
+}
+
+.img2{
 	float: right;
-	grid-column: 1 / 5;
-	grid-row: 1;
-	height: 65px;
-	padding-right: 10px;
+	height: 40px;
+	padding-right: 20px;
+}
+
+.img_genre{
+	width: 100vw;
+	height: auto;
+}
+
+.img_song{
+	width: 100vw;
+	height: auto;
+}
+
+.img_contact{
+	width: 100vw;
+	height: auto;
+}
+
+.img_admin{
+	width: 100vw;
+	height: auto;
 }
 
 /* Boxes */
 .header{
+	font-family: 'Barlow', sans-serif;
 	background-color: #703a00;
 	grid-column: 1 / 5;
   	grid-row: 3;
@@ -101,14 +125,17 @@
 	width: 10.5%;
 	padding: 10px;
 	text-align: center;
+	min-width: 150px;
+	
 }
 
 .content_column{
 	float: left;
-	height:20px;
+	height:30px;
 	width: 10%;
 	padding: 15px;
 	text-align: center;
+	min-width: 150px;
 }
 
 .row:after {
@@ -144,20 +171,13 @@
 }
 
 .box4{
-	font-family: 'Barlow', sans-serif;
-	font-size: 30px;
-	font-weight: bold;
-	background-color: #F6E8B1;
-	grid-column: 1 / 5;
-  	grid-row: 2;
-	height: 100px;
-	width: 100%;
-	color: #703a00;
-	padding: 5px 0;
-  	text-align: center;
+	
+
 }
 
 .box5{
+	background-image: url('../images/background1.jpg');
+	background-repeat: repeat;
 	font-family: 'Barlow', sans-serif;
 	background-color: #F6E8B1;
 	grid-column: 1 / 5;
@@ -165,11 +185,13 @@
 	height: 605px;
 	width: 100%;
 	color: #6E6854;
-	overflow-x: hidden; 
+	overflow-x: scroll; 
 	overflow-y: scroll;
 }
 
 .box6{
+	background-image: url('../images/background1.jpg');
+	background-repeat: repeat;
 	font-family: 'Barlow', sans-serif;
 	background-color: #F6E8B1;
 	grid-column: 1 / 5;
@@ -179,21 +201,17 @@
 	color: #6E6854;
 }
 
-.box7{
-	font-family: 'Barlow', sans-serif;
-	font-size: 30px;
-	font-weight: bold;
+body {
+	background-image: url("/13CSI_Assessment/images/background1.jpg");
 	background-color: #F6E8B1;
-	grid-column: 1 / 5;
-  	grid-row: 2;
-	height: 100px;
-	width: 100%;
-	color: #703a00;
-	padding: 5px 0;
-  	text-align: center;
+}
+
+.box7{
 }
 
 .box8{
+	background-image: url('../images/background1.jpg');
+	background-repeat: repeat;
 	font-family: 'Barlow', sans-serif;
 	background-color: #F6E8B1;
 	grid-column: 1 / 5;
@@ -203,20 +221,11 @@
 }
 
 .box9{
-	font-family: 'Barlow', sans-serif;
-	font-size: 30px;
-	font-weight: bold;
-	background-color: #703a00;
-	grid-column: 1 / 5;
-  	grid-row: 2;
-	height: 100px;
-	width: 100%;
-	color: #F6E8B1;
-	padding: 5px 0;
-  	text-align: center;
 }
 
 .box10{
+	background-image: url('../images/background1.jpg');
+	background-repeat: repeat;
 	font-family: 'Barlow', sans-serif;
 	background-color: #F6E8B1;
 	grid-column: 1 / 5;
@@ -251,7 +260,10 @@ hr.solid {
 }
 
 /* Login and Register Form */
-body {font-family: 'Barlow', sans-serif;}
+body {
+	background-image: url("images/background1.jpg");
+	background-color: #F6E8B1;
+}
 
 input[type=text], input[type=password] {
   width: 100%;
