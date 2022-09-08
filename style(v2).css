@@ -130,6 +130,8 @@
 }
 
 .content_column{
+	font-weight: bold;
+	color: black;
 	float: left;
 	height:30px;
 	width: 10%;
@@ -176,7 +178,7 @@
 }
 
 .box5{
-	background-image: url('../images/background1.jpg');
+	background-image: url('../images/background2.jpg');
 	background-repeat: repeat;
 	font-family: 'Barlow', sans-serif;
 	background-color: #F6E8B1;
@@ -190,7 +192,7 @@
 }
 
 .box6{
-	background-image: url('../images/background1.jpg');
+	background-image: url('../images/background2.jpg');
 	background-repeat: repeat;
 	font-family: 'Barlow', sans-serif;
 	background-color: #F6E8B1;
@@ -201,16 +203,12 @@
 	color: #6E6854;
 }
 
-body {
-	background-image: url("/13CSI_Assessment/images/background1.jpg");
-	background-color: #F6E8B1;
-}
 
 .box7{
 }
 
 .box8{
-	background-image: url('../images/background1.jpg');
+	background-image: url('../images/background2.jpg');
 	background-repeat: repeat;
 	font-family: 'Barlow', sans-serif;
 	background-color: #F6E8B1;
@@ -224,7 +222,7 @@ body {
 }
 
 .box10{
-	background-image: url('../images/background1.jpg');
+	background-image: url('../images/background2.jpg');
 	background-repeat: repeat;
 	font-family: 'Barlow', sans-serif;
 	background-color: #F6E8B1;
@@ -261,7 +259,7 @@ hr.solid {
 
 /* Login and Register Form */
 body {
-	background-image: url("images/background1.jpg");
+	background-image: url("images/background2.jpg");
 	background-color: #F6E8B1;
 }
 
