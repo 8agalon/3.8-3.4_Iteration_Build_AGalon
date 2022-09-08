@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		
+		<meta charset = "utf-8" />
+		<title>Admin</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+	</head>
+	
+	<body>
+		
+		<div class="grid-container">
+			
+			<div class="nav"><!-- Holds the page navigation -->
+				<?php
+					session_start();
+					//Pulls the links from the nav.php page and places them in the navigation div
+				
+					if($_SESSION['login_user'] == "user"){
+						require 'nav_user.php';
+					}
+				
+					elseif($_SESSION['login_user'] !== "Graeme"){
+						require 'nav_user.php';
+					}
+				
+					elseif($_SESSION['login_user'] == "Graeme"){
+						require 'nav_admin.php';
+					}
+
+					else
+						header("Location: login.php")
+					
+				?>
+			</div>
+					
+			<div class="box9">
+				<img src="images/admin(v3).jpg" alt="admin" class="img_admin">
+			</div>
+				<div class="box10">
+						<h1>Current Users</h1>
+						<br>
+					<div class="row3">
+							<div class="column3">
+								<h3>Users</h3>
+								<?php
+									//connect.php (tells where to connect servername, username, password, dbaseName)
+									require "13CSI_Assessment_Database_mysqli.php";
+
+									//create a variable to store sql code for the 'display all users' query
+									$query = ("SELECT * FROM User");
+
+									//run the query
+									$result = mysqli_query($conn,$query);
+
+									while ($output = mysqli_fetch_array($result))
+									{
+										echo "<user2>" . $output['User_ID'] . "</user2><br>";
+									//closes the while loop
+										}
+								?>
+							</div>
+					
+							<div class="column3">
+								<h3>Password</h3>
+								<?php
+									//run the query
+									$result = mysqli_query($conn,$query);
+
+									while ($output = mysqli_fetch_array($result))
+									{
+										echo "<user2>" . $output['Password'] . "</user2><br>";
+									//closes the while loop
+										}
+								?>
+							</div>
+				</div>
+				
+					<br>
+
+
+				<hr class="solid">
+
+				<h1>Add Users</h1>
+				<br>
+				<form method="post" id="04_add_user.php"> 
+				<h4><label for = 'login'>Username:</label>
+				<input type = "text" name= "username" placeholder = "Enter user name" required/></h4> 
+				<h4><label for = 'login'>Password:</label>
+				<input type = "password" name="password" placeholder = "Enter user password" required/></h4>
+				<br> 
+				<h4><input type="submit" value="Insert"/></h4>
+				<br>
+				<br>
+				<br>
+			</form>
+				<br>
+
+			<?php
+							//connect.php (tells where to connect servername, username, password, dbaseName)
+							require "13CSI_Assessment_Database_mysqli.php";
+						
+							$UserID = isset($_POST['username']) ? $_POST['username']: "";
+							$PW = isset($_POST['password']) ? $_POST['password']: "";
+					
+							//create a variable to store sql code for the 'Add Users' query
+							$insertquery = "INSERT INTO User( User_ID, Password ) VALUES(  '$UserID', '$PW' )";
+							if ($UserID == "")
+								{
+								echo "";
+								}
+							elseif (mysqli_query($conn,$insertquery))
+								{
+								echo "<p class = 'grey'>Account Created</p>";
+								}
+							else
+								{
+								echo "<p class = 'grey'>Error Creating Account</p>";
+								}
+			?>
+			<hr class="solid">
+				
+				<h1>Update User</h1>
+				<br>
+				<form method="post" id="05_update_user.php"  > 
+							<h4><label for = 'login'>Existing User Name:</label>
+							<input type="text" name = "ExistingUserName" placeholder = "Enter existing user name"/></h4>
+							<h4><label for = 'login'>New User Name:</label>
+							<input type="text" name = "NewUserName" placeholder = "Enter new user name"/></h4>
+							<h4><input type="submit" value="Update" /></h4> 
+						</form>
+
+						<?php
+							require "13CSI_Assessment_Database_mysqli.php";
+							print "<p class = 'grey'>Connected to server</p>";
+					
+							$ExistingUserID = isset($_POST['ExistingUserName']) ? $_POST['ExistingUserName']: "";
+							$NewUserID = isset($_POST['NewUserName']) ? $_POST['NewUserName']: "";
+
+							//create a variable to store sql code for the 'Add Users' query
+							$updatequery = "UPDATE User SET User_ID = '$NewUserID' WHERE User_ID = '$ExistingUserID'";
+							if (mysqli_query($conn,$updatequery))
+							{
+							echo "<h3>Record updated</h3>";
+							}
+							else
+							{
+							echo "<h3>Error updatinging record:</h3> ";
+							}
+						?>
+				<hr class="solid">
+				
+				<h1>Delete User</h1>
+				<br>
+				<form method = "post" id = "06_delete_user.php" > 
+							<h4><label for = 'login'>User Name:</label>
+							<input type="text" name = "UserName" placeholder="Enter user name"/></h4>
+							<h4><input type="submit" value="Delete" /></h4>
+						</form>
+							<?php
+								require "13CSI_Assessment_Database_mysqli.php";
+								print "<p class = 'grey'>Connected to server</p>";
+
+								$UserID = isset($_POST['UserName']) ? $_POST['UserName']: "";
+							
+								//create a variable to store sql code for the 'Add Users' query					
+								$deletequery = "DELETE FROM User WHERE User_ID = '$UserID'";
+
+								if (mysqli_query($conn,$deletequery))
+								{
+								echo "<h3>Record deleted</h3>";
+								}
+								else
+								{
+								echo "<h3>Error deleting record:</h3> ";
+								}
+							?>
+				
+			</div>
+			
+			<div class="footer"><!-- Holds the foot notes -->
+				<p class = "grey">&copy Copyright Allen Galon 2022, Tawa College, All Rights Reserved.♥<a href="index.php"><img class="img2" src="images/moosic_mic.png" alt="Moosic_Logo"/></a></p>
+			</div>
+			
+		</div>
+			
+	</body>
+	
+</html>
