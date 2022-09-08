@@ -1,0 +1,70 @@
+<?php
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		
+		<meta charset = "utf-8" />
+		<title>Register</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+	</head>
+	
+	<body>
+		
+		<div class="grid-container">
+			
+			<div class="box6">
+				<div class="container">
+					<h1>Register</h1>
+					<p>Please fill in this form to create an account.</p>
+					<hr>
+					<form method="post">
+						<label for="username"><b>Username</b></label>
+						<input type="text" placeholder="Enter Username" name="username" id="username" required>
+
+						<label for="password"><b>Password</b></label>
+						<input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+						<hr>
+
+						<button class="sub-button" type="submit">Register</button>
+						<p>Already have an account? <a href="login.php">Sign in</a>.</p>
+					</form>
+					<?php
+							//connect.php (tells where to connect servername, username, password, dbaseName)
+							require "13CSI_Assessment_Database_mysqli.php";
+						
+							$UserID = isset($_POST['username']) ? $_POST['username']: "";
+							$PW = isset($_POST['password']) ? $_POST['password']: "";
+					
+							//create a variable to store sql code for the 'Add Users' query
+							$insertquery = "INSERT INTO User( User_ID, Password ) VALUES(  '$UserID', '$PW' )";
+							if ($UserID == "")
+								{
+								echo "";
+								}
+							elseif (mysqli_query($conn,$insertquery))
+								{
+								echo "<p class = 'grey'>Account Created</p>";
+								}
+							else
+								{
+								echo "<p class = 'grey'>Error Creating Account</p>";
+								}
+						?>
+					
+				  </div>
+			</div>
+			<div class="footer"><!-- Holds the foot notes -->
+				<p class = "grey">&copy Copyright Allen Galon 2022, Tawa College, All Rights Reserved.♥</p>
+			</div>
+			
+		</div>
+			
+	</body>
+	
+</html>
