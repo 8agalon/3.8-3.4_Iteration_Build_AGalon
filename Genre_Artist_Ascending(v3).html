@@ -13,17 +13,90 @@
 		
 		<div class="grid-container">
 			
-			<div class="nav">
-				<p>Navigation</p>
+			<div class="nav"><!-- Holds the page navigation -->
+				<?php
+					session_start();
+					//Pulls the links from the nav.php page and places them in the navigation div
+
+					if($_SESSION['login_user'] == "Graeme"){
+						require 'nav_admin.php';
+
+						}
+					elseif($_SESSION['login_user'] !== "Graeme"){
+						require 'nav_user.php';
+					}
+
+					else
+						header("Location: login.php")
+					
+				?>
 			</div>
 			<div class="box4">
-				<p>Header - Genre_Artist_Ascending</p>
+				<p>Genre_Artist_Ascending</p>
+			</div>
+			<div class="header">
+				<div class="column">
+					<h4>ID</h4>
+				</div>
+				<div class="column">
+					<h4>Song Name</h4>
+				</div>
+				<div class="column">
+					<h4>Duration</h4>
+				</div>
+				<div class="column">
+					<h4>Size</h4>
+				</div>
+				<div class="column">
+					<h4>Album</h4>
+				</div>
+				<div class="column">
+					<h4>Artist</h4>
+				</div>
+				<div class="column">
+					<h4>Genre</h4>
+				</div>
+				<div class="column">
+					<h4>Total Duration</h4>
+				</div>
 			</div>
 			<div class="box5">
-				<p>Different Songs</p>
+				<?php
+					require "13CSI_Assessment_Database_mysqli.php";
+
+					//Creates a variable to store the sql query
+						$query = ("SELECT s.Song_PK, s.Song_Name, s.Duration, s.Size, f.Album, a.Artist, g.Genre, SUM(Duration) over() 							AS Total_Duration
+
+						FROM Song_Details AS s
+
+						INNER JOIN Album f ON s.Album_PK = f.Album_PK
+
+						JOIN Song_To_Artist k ON s.Song_PK = k.Song_PK
+						JOIN Artist a ON a.Artist_PK = k.Artist_PK
+
+						JOIN Song_To_Genre h ON s.Song_PK = h.Song_PK
+						JOIN Genre g ON g.Genre_PK = h.Genre_PK
+
+						ORDER BY Genre ASC, Artist ASC");
+
+					$result = mysqli_query($conn,$query);
+					while($output=mysqli_fetch_array($result))
+					{
+					?>
+					<p class = 'content_column'><?php echo $output['Song_PK']; ?></p>
+					<p class = 'content_column'><?php echo $output['Song_Name']; ?></p>
+					<p class = 'content_column'><?php echo $output['Duration']; ?></p>
+					<p class = 'content_column'><?php echo $output['Size']; ?></p>
+					<p class = 'content_column'><?php echo $output['Album']; ?></p>
+					<p class = 'content_column'><?php echo $output['Artist']; ?></p>
+					<p class = 'content_column'><?php echo $output['Genre']; ?></p>
+					<p class = 'content_column'><?php echo $output['Total_Duration']; ?></p>
+				<?php
+				}
+				?>
 			</div>
 			<div class="footer"><!-- Holds the foot notes -->
-				<p class = "grey">&copy Copyright Allen Galon 2022</p>
+				<p class = "grey">&copy Copyright Allen Galon 2022, Tawa College, All Rights Reserved.♥</p>
 			</div>
 			
 		</div>

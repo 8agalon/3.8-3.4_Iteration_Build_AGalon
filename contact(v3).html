@@ -13,17 +13,73 @@
 		
 		<div class="grid-container">
 			
-			<div class="nav">
-				<p>Navigation</p>
+			<div class="nav"><!-- Holds the page navigation -->
+				<?php
+					session_start();
+					//Pulls the links from the nav.php page and places them in the navigation div
+
+					if($_SESSION['login_user'] == "Graeme"){
+						require 'nav_admin.php';
+
+						}
+					elseif($_SESSION['login_user'] !== "Graeme"){
+						require 'nav_user.php';
+					}
+
+					else
+						header("Location: login.php")
+					
+				?>
 			</div>
 			<div class="box7">
 				<p>Heading - Contact</p>
 			</div>
 			<div class="box8">
-				<p>Content</p>
+				<form action="connect.php" method="post">
+					<!-- Name Field -->
+					<div class="row1">
+					   <div class="column1">
+						  <label for="name">Full Name</label>
+					   </div>
+					   <div class="column2">
+						  <input type="text" id="name" name="name" placeholder="Your Full Name">	
+					   </div>
+					</div>
+
+					<!-- Email Field -->
+					<div class="row1">
+					   <div class="column1">
+						  <label for="email">Email Address</label>
+					   </div>
+					   <div class="column2">
+						  <input type="text" id="email" name="email" placeholder="Your Email Address">	
+					   </div>
+					</div>
+
+					<!-- Contact Field -->
+					<div class="row1">
+					   <div class="column1">
+						  <label for="phone">Contact Number</label>
+					   </div>
+					   <div class="column2">
+						  <input type="text" id="phone" name="phone" placeholder="Your Contact Number">	
+					   </div>
+					</div>
+
+					<!-- Submit Field -->
+					<div class="row1">
+					   <div class="column1">
+						  <label for="message">Submit</label>
+					   </div>
+					   <div class="column2">
+						  <input type="text" id="message" name="message" placeholder="Your message">
+						  <input type="submit" value="Submit">
+					   </div>
+					</div>
+			 	</form>
 			</div>
 			<div class="footer"><!-- Holds the foot notes -->
-				<p class = "grey">&copy Copyright Allen Galon 2022</p>
+				<p class = "grey">&copy Copyright Allen Galon 2022, Tawa College, All Rights Reserved.♥</p>
 			</div>
 			
 		</div>
